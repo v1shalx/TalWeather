@@ -7,10 +7,7 @@ function App() {
   const [weatherData, setWeatherData] = useState(null);
 
   useEffect(() => {
-    const apiUrl = ` https://api.weatherapi.com/v1/current.json?key=ca09e4e0f1234ee996774550242903&q=${city}&aqi=no`;
-
-   
-
+    const apiUrl = `https://api.weatherapi.com/v1/current.json?key=ca09e4e0f1234ee996774550242903&q=${city}&aqi=no`;
 
     fetch(apiUrl)
       .then((res) => {
@@ -27,9 +24,10 @@ function App() {
         console.log(e);
       });
   }, [city]);
+
   return (
-    <div className="bg-slate-800 h-screen flex justify-center  items-start">
-      <div className="w-1/5 h-1/3 mt-40">
+    <div className="bg-slate-800 min-h-screen flex flex-col justify-center items-center">
+      <div className="w-full max-w-screen-md mt-16">
         {weatherData && (
           <Temperature
             setCity={setCity}
@@ -43,8 +41,8 @@ function App() {
           />
         )}
       </div>
-      <div className="w-1/3 h-1/3 mt-40 p-10 grid grid-cols-2 gap-6">
-        <h1 className="text-slate-200 text-2xl col-span-2">
+      <div className="w-full max-w-screen-lg mt-1 p-10 grid grid-cols-1 md:grid-cols-2 gap-6">
+        <h1 className="text-slate-200 text-2xl md:col-span-2 text-center">
           Today's Highlights
         </h1>
         {weatherData && (

@@ -6,14 +6,16 @@ function Temperature({ setCity, stats }) {
   };
   return (
     <>
-      <div className="flex align-middle justify-center">
-        <input
-          type="text"
-          className="bg-slate-600 border border-slate-500 text-slate-200 placeholder-slate-400 text-md focus:border-slate-400 block w-60 p-2 focus:outline-none"
-          placeholder="Enter Your City Name"
-          onChange={handleCityChange}
-          defaultValue="raver"
-        />
+     <div className="flex items-center justify-center">
+  <input
+    type="text"
+    className="bg-slate-600 border border-slate-500 text-slate-200 placeholder-slate-400 text-md focus:border-slate-400 block w-60 p-2 focus:outline-none text-center"
+    placeholder="Enter Your City Name"
+    onChange={handleCityChange}
+    defaultValue="raver"
+  />
+
+
         <div className="m-4">
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -60,7 +62,7 @@ function Temperature({ setCity, stats }) {
             viewBox="0 0 24 24"
             strokeWidth={1.5}
             stroke="currentColor"
-            className="w-12 h-12 text-slate-200 mt-8"
+            className="w-12 h-12 text-slate-200 "
           >
             <path
               strokeLinecap="round"
@@ -71,7 +73,7 @@ function Temperature({ setCity, stats }) {
         )}
       </div>
 
-      <div className="flex justify-center items-center text-slate-200 mt-8">
+      <div className="flex justify-center items-center text-slate-200 ">
         <p className="font-semibold text-[55px] ">
           {stats.temp}
           <span className="text-[33px]">°C</span>
